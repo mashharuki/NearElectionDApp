@@ -1,6 +1,14 @@
 # NearElectionDApp
 Near上で動作するDApp開発用のリポジトリです。
 
+#### トレイトとは
+
+データ型を分類する仕組みのことです。
+
+#### near SDK  Rust
+
+NEARスマートコントラクトを作成するためのRustライブラリ
+
 ### 動かし方
 
 ```cmd
@@ -58,3 +66,4 @@ Creating a new NEAR dApp
 #### 参考文献
  1. <a href="https://tailwindcss.jp"/>Tailwind</a>
  2. <a href="https://postcss.org/">PostCSS</a>
+ 3. <a href="https://docs.rs/near-sdk/latest/near_sdk/">near SDK</a>

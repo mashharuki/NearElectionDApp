@@ -24,11 +24,35 @@ pub use crate::mint::*;
 pub use crate::nft_core::*;
 pub use vote::*;
 
-#[cfg(test)]
-mod tests {
-    #[test]
-    fn it_works() {
-        let result = 2 + 2;
-        assert_eq!(result, 4);
-    }
+// struct data of election Contract
+#[near_bindgen]
+#[derive(BorshDeserialize, BorshSerialize, PanicOnDefault)]
+pub struct Contract {
+    pub onwer_id: AccountId,
+    pub tokens_per_owner: LookupMap<AccountId, UnorderedSet<TokenId>>,
+    pub tokens_per_kind: LookupMap<TokenKind, UnorderedSet<TokenId>>,
+    pub tokens_by_id: LookupMap<TokenId, TokenOwner>,
+    pub token_metadata_by_id: UnorderedMap<TokenId, TokenMetadata>,
+    pub metadata: LazyOption<NFTContractMetadata>,
+    pub token_id_counter: u128,
+    pub likes_per_candidate: LookupMap<TokenId, Likes>,
+    pub added_voter_list: LookupMap<ReceiverId, TokenId>,
+    pub voted_voter_list: LookupMap<ReceiverId, u128>,
+    pub is_election_closed: bool,
+}
+
+// enum of StorageKey
+#[derive(BorshSerialize)]
+pub enum StorageKey {
+    TokensPerOwner,
+    TokensPerKind,
+    TokensPerOwnerInner { account_id_hash: CryptoHash },
+    TokensPerKindInner { token_kind: TokenKind },
+    TokensById,
+    TokenMetadataById,
+    TokensPerTypeInner { token_type_hash: CryptoHash },
+    NFTContractMetadata,
+    LikesPerCandidate,
+    AddedVoterList,
+    VotedVoterList,
 }
