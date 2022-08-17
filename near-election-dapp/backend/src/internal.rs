@@ -6,7 +6,7 @@ pub(crate) fn hash_account_id(account_id: &AccountId) -> CryptoHash {
     let mut hash = CryptoHash::default();
     hash.copy_from_slice(&env::sha256(account_id.as_bytes()));
     hash
-};
+}
 
 // refund near function
 pub(crate) fn refund_deposit(storage_used: u64) {
@@ -24,7 +24,7 @@ pub(crate) fn refund_deposit(storage_used: u64) {
     if refund > 1 {
         Promise::new(env::predecessor_account_id()).transfer(refund);
     };
-};
+}
 
 impl Contract {
 
@@ -40,13 +40,13 @@ impl Contract {
                     account_id_hash: hash_account_id(&account_id),
                 }
                 .try_to_vec()
-                .unwrap(),
+                .unwrap()
             )
-            // insert token id
-            tokens_set.insert(token_id);
-            // insert tokens
-            self.tokens_per_owner.insert(account_id, &tokens_set);
         });
+        // insert token id
+        &tokens_set.insert(token_id);
+        // insert tokens
+        self.tokens_per_owner.insert(account_id, &tokens_set);
     }
 
     // add token to kind map
@@ -74,4 +74,4 @@ impl Contract {
         tokens_set.insert(&token_id);
         self.tokens_per_kind.insert(&token_kind_clone, &tokens_set);
     }
-};
+}

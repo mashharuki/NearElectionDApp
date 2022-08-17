@@ -1,5 +1,5 @@
 [package]
-name = "backend"
+name = "electionnftcontract"
 version = "0.1.0"
 authors = ["mashharuki"]
 edition = "2021"

@@ -41,6 +41,36 @@ Creating a new NEAR dApp
 🧠 Read README.md to explore further.
 ```
 
+#### ビルド＆デプロイの方法
+
+1. `export NFT_CONTRACT_ID=dev-1660204085773-49134722844982`
+2. `echo $NFT_CONTRACT_ID`
+3. `near login`
+4. `set -e && RUSTFLAGS='-C link-arg=-s' cargo build --target wasm32-unknown-unknown --release && near deploy --wasm-file target/wasm32-unknown-unknown/release/electionnftcontract.wasm --accountId $NFT_CONTRACT_ID`
+
+上記4がうまくいかない場合  
+
+4. `cargo build --target wasm32-unknown-unknown --release`
+5. `ls ./target/wasm32-unknown-unknown/release | grep electionnftcontract.wasm`
+
+続いてサブアカウントを作成する  
+
+6. `near create-account nftcontract.dev-1660204085773-49134722844982 --masterAccount dev-1660204085773-49134722844982 --initialBalance 50`
+
+スマートコントラクトをデプロイする。
+
+7. `near deploy --wasmFile target/wasm32-unknown-unknown/release/electionnftcontract.wasm --accountId nftcontract.dev-1660204085773-49134722844982`
+
+うまく行けば下記の様に出力される。  
+
+```cmd
+Starting deployment. Account id: nftcontract.dev-1660204085773-49134722844982, node: https://rpc.testnet.near.org, helper: https://helper.testnet.near.org, file: target/wasm32-unknown-unknown/release/electionnftcontract.wasm
+Transaction Id 84xHxxS8WPPuqqFBvUG3XSxxepejRyU8C1zeaWSZDeu2
+To see the transaction in the transaction explorer, please open this url in your browser
+https://explorer.testnet.near.org/transactions/84xHxxS8WPPuqqFBvUG3XSxxepejRyU8C1zeaWSZDeu2
+Done deploying to nftcontract.dev-1660204085773-49134722844982
+```
+
 #### ディレクトリ構成を出力する方法
  `tree -L 2 -F`  
 

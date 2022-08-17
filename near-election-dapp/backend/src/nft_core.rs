@@ -4,7 +4,7 @@ use crate::*;
 pub trait NonFungibleTokenCore {
     // get nft info
     fn nft_token(&self, token_id: TokenId) -> Option<JsonToken>;
-};
+}
 
 #[near_bindgen]
 impl NonFungibleTokenCore for Contract {
@@ -13,7 +13,7 @@ impl NonFungibleTokenCore for Contract {
 
         if let Some(token) = self.tokens_by_id.get(&token_id) {
             // get metadata
-            let metadata = self.tokens_by_id.get(&token_id).unwrap();
+            let metadata = self.token_metadata_by_id.get(&token_id).unwrap();
             // return
             Some(JsonToken {
                 owner_id: token.owner_id,
@@ -22,5 +22,5 @@ impl NonFungibleTokenCore for Contract {
         } else {
             None
         }
-    };
-};
+    }
+}

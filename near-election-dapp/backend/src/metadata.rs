@@ -33,20 +33,20 @@ pub struct TokenMetadata {
 // struct of tokenOwner ID
 #[derive(BorshDeserialize, BorshSerialize)]
 pub struct TokenOwner {
-    pub onwer_id: AccountId,
+    pub owner_id: AccountId,
 }
 
 // metadata of type of Json (Account ID & token metadata)
 #[derive(Serialize, Deserialize)]
 #[serde(crate = "near_sdk::serde")]
-+pub struct JsonToken {
+pub struct JsonToken {
     pub owner_id: AccountId,
     pub metadata: TokenMetadata,
 }
 
 // trait of NFTTokenMetadata
 pub trait NFTTokenMetadata {
-    fn nft_metadata(&self) -> NFTTokenMetadata
+    fn nft_metadata(&self) -> NFTContractMetadata;
 }
 
 // impl of NFTTokenMetadata

@@ -28,7 +28,7 @@ pub use vote::*;
 #[near_bindgen]
 #[derive(BorshDeserialize, BorshSerialize, PanicOnDefault)]
 pub struct Contract {
-    pub onwer_id: AccountId,
+    pub owner_id: AccountId,
     pub tokens_per_owner: LookupMap<AccountId, UnorderedSet<TokenId>>,
     pub tokens_per_kind: LookupMap<TokenKind, UnorderedSet<TokenId>>,
     pub tokens_by_id: LookupMap<TokenId, TokenOwner>,

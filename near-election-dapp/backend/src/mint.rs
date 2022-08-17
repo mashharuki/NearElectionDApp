@@ -14,9 +14,9 @@ impl Contract {
         // get token id
         metadata.token_id = Some(self.token_id_counter);
         // get data
-        let intial_storage_usage = env::storage_usage();
+        let initial_storage_usage = env::storage_usage();
         let receiver_id_clone = receiver_id.clone();
-        let token = TokenOwner { owner_id: receiver_id, };
+        let token = TokenOwner { owner_id: receiver_id};
         let token_id = self.token_id_counter;
         let token_kind = metadata.token_kind.clone();
 
@@ -33,7 +33,7 @@ impl Contract {
         self.added_voter_list.insert(&receiver_id_clone, &self.token_id_counter);
         // increment token id
         self.token_id_count();
-        let required_storage_in_bytes = env::storage_usage() - initial_storage_usage;
+        let required_storage_in_bytes = env::storage_usage() - &initial_storage_usage;
 
         // refund unused payment deposit
         refund_deposit(required_storage_in_bytes);
@@ -45,7 +45,7 @@ impl Contract {
     }
 
     // get next token id
-    pub fn show_token_id_counter(&self) -> u128 {
+    pub fn show_token_id_counter(&self) {
         self.token_id_counter;
     }
 }
