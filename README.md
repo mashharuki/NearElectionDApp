@@ -63,6 +63,14 @@ Creating a new NEAR dApp
 ### Taliwindのインストールと設定ファイルを生成するコマンド
  `npm install -D tailwindcss postcss &&  npx tailwindcss init`  
 
+### #[payable]の役割
+
+ [payable]は token を授受できるようにするための注釈です。
+
+### pub(crate)の役割
+
+pub(crate)とは、このファイル内だけで使用できる関数であることを示しています。
+
 #### 参考文献
  1. <a href="https://tailwindcss.jp"/>Tailwind</a>
  2. <a href="https://postcss.org/">PostCSS</a>
