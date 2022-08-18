@@ -61,6 +61,26 @@ Creating a new NEAR dApp
 
 7. `near deploy --wasmFile target/wasm32-unknown-unknown/release/electionnftcontract.wasm --accountId nftcontract.dev-1660204085773-49134722844982`
 
+NFTコントラクトを初期化する。
+
+8. `near call $NFT_CONTRACT_ID new_default_meta '{"owner_id": "'$NFT_CONTRACT_ID'"}' --accountId $NFT_CONTRACT_ID`
+
+```cmd
+https://explorer.testnet.near.org/transactions/Fs7nLnN7vzNjybGHQ8DSgVxoPZ5znJ2tCe8FrRJSopqZ
+```
+
+NFTをミントする。
+
+9. `near call $NFT_CONTRACT_ID nft_mint '{"metadata": {"title": "Vote Ticket", "description": "First Token", "media": "https://gateway.pinata.cloud/ipfs/QmUs5K3LwdvbhKA58bH9C6FX5Q7Bhsvvg9GRAhr9aVKLyx", "media_CID": "QmUs5K3LwdvbhKA58bH9C6FX5Q7Bhsvvg9GRAhr9aVKLyx","token_kind": "vote"}, "receiver_id": "'$NFT_CONTRACT_ID'"}' --accountId $NFT_CONTRACT_ID --amount 0.1`
+
+```cmd
+https://explorer.testnet.near.org/transactions/D3zbD65MgrwtQRi4WcjMx9mwxG2jmi2rPKAbGs63eFpC
+```
+
+発行例  
+
+<img src="./assets/imgs/mint.png">
+
 うまく行けば下記の様に出力される。  
 
 ```cmd
