@@ -56,4 +56,30 @@ impl Contract {
             .map(|token_id| self.nft_token(token_id.clone()).unwrap())
             .collect()
     }
+
+    // get token info for kind
+    pub fn nft_tokens_for_kind(
+        &self,
+        token_kind: TokenKind,
+        from_index: Option<U128>,
+        limit: Option<u64>,
+    ) -> Vec<JsonToken> {
+        // get tokens kind set
+        let tokens_for_kind_set = self.tokens_per_kind.get(&token_kind);
+        // check 
+        let tokens = if let Some(tokens_for_kind_set) = tokens_for_kind_set {
+            tokens_for_kind_set
+        } else {
+            return vec![];
+        };
+
+        let start = u128::from(from_index.unwrap_or(U128(0)));
+        // return
+        tokens
+            .iter()
+            .skip(start as usize)
+            .take(limit.unwrap_or(50) as usize)
+            .map(|token_id| self.nft_token(token_id.clone()).unwrap())
+            .collect()
+    }
 }

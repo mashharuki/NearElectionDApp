@@ -6,6 +6,8 @@ pub trait NonFungibleTokenCore {
     fn nft_token(&self, token_id: TokenId) -> Option<JsonToken>;
     // transfer
     fn nft_transfer(&mut self, receiver_id: AccountId, token_id: TokenId,);
+    // add likes
+    fn nft_add_likes_to_candidate(&mut self, token_id: TokenId);
 }
 
 #[near_bindgen]
@@ -39,5 +41,17 @@ impl NonFungibleTokenCore for Contract {
         let sender_id = env::predecessor_account_id();
         // transfer
         self.internal_transfer(&sender_id, &receiver_id, &token_id);
+    }
+
+    // add likes function
+    fn nft_add_likes_to_candidate(&mut self, token_id: TokenId) {
+        if self.likes_per_candidate.get(&token_id).is_some() {
+            // like
+            let mut likes = self.likes_per_candidate.get(&token_id);
+            // replace
+            likes.replace(likes.unwrap() + 1 as Likes);
+            // add like (insert)
+            self.likes_per_candidate.insert(&token_id, &likes.unwrap());
+        }
     }
 }
