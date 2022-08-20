@@ -251,6 +251,10 @@ https://wallet.testnet.near.org/auto-import-secret-key#YOUR_ACCOUNT_ID/YOUR_PRIV
 
 https://wallet.near.org/auto-import-secret-key#YOUR_ACCOUNT_ID/YOUR_PRIVATE_KEY
 
+### NetlifyへのデプロイURL
+
+https://nearelectiondapp.netlify.app
+
 #### 参考文献
  1. <a href="https://tailwindcss.jp"/>Tailwind</a>
  2. <a href="https://postcss.org/">PostCSS</a>
