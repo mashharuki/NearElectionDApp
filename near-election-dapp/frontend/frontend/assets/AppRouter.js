@@ -16,7 +16,7 @@ const AppRouter = () => {
                 <Route path="/voter" element={<Voter />} />
             </Routes>
         </BrowserRouter>
-    )
+    );
 }
 
 export default AppRouter;

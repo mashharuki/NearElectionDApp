@@ -4,6 +4,7 @@
   "license": "(MIT AND Apache-2.0)",
   "scripts": {
     "start": "cd frontend && npm run start",
+    "dev": "nodemon --watch contract -e ts --exec \"npm run start\"",
     "deploy": "npm run build:contract && cd contract && near dev-deploy --wasmFile ./target/wasm32-unknown-unknown/release/hello_near.wasm",
     "build": "npm run build:contract && npm run build:web",
     "build:web": "cd frontend && npm run build",
@@ -19,6 +20,7 @@
     "tailwindcss": "^3.1.8"
   },
   "dependencies": {
+    "autoprefixer": "^10.4.8",
     "parcel": "^2.7.0",
     "react-ipfs-image": "^0.6.0",
     "react-router-dom": "^6.3.0"

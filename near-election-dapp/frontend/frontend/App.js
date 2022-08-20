@@ -70,6 +70,7 @@ export default function App() {
       <div className='center'>
         <AppRouter />
       </div>
+      
     </div>
   )
 }
