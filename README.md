@@ -9,7 +9,7 @@ Near上で動作するDApp開発用のリポジトリです。
 
 NEARスマートコントラクトを作成するためのRustライブラリ
 
-### 動かし方
+### 動かし方メモ
 
 ```cmd
 ======================================================
@@ -40,6 +40,25 @@ Creating a new NEAR dApp
 
 🧠 Read README.md to explore further.
 ```
+
+### アプリの起動方法
+
+1. あらかじめスマートコントラクトをNear上にデプロイしておくこと
+2. frontend/frontend/neardev/dev-account.envにコントラクトIDを登録しておくこと
+3. near-election-dapp/frontend配下で`yarn dev`と入力する。
+4. 下記の様に出力されていればOK! [http://localhost:1234/](http://localhost:1234/)にアクセスできる。
+
+```cmd
+  💡 Remove the above plugins from .postcssrc
+    📝 Learn more: https://parceljs.org/languages/css/#default-plugins
+
+  ✨ Built in 221ms
+```
+
+5. アプリの画面例
+
+<img src="./assets/imgs/vote.png">  
+
 
 #### テストの方法
 
@@ -219,6 +238,18 @@ NFTに紐づく投票数を取得する場合
 ### pub(crate)の役割
 
 pub(crate)とは、このファイル内だけで使用できる関数であることを示しています。
+
+### アカウントIDと秘密鍵の情報からNear Walletのアカウントをインポートする方法
+
+1. 下記URLにアカウントIDと秘密鍵を当てはめてアクセス
+
+##### testnet:
+
+https://wallet.testnet.near.org/auto-import-secret-key#YOUR_ACCOUNT_ID/YOUR_PRIVATE_KEY
+
+###### mainnet:
+
+https://wallet.near.org/auto-import-secret-key#YOUR_ACCOUNT_ID/YOUR_PRIVATE_KEY
 
 #### 参考文献
  1. <a href="https://tailwindcss.jp"/>Tailwind</a>

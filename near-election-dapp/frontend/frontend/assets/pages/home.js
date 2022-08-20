@@ -9,10 +9,18 @@ import {
     voter_voted, 
     close_election, 
     if_election_closed, 
-    reopen_election
+    reopen_election,
 } from '../js/near/utils'
 import CandidateCard from "../components/candidate_card";
-import LikeIcon from '../img/like_icon.png'
+import LikeIcon from '../img/like_icon.png';
+
+// enum of state
+const State = {
+    Fetching: "fetching",
+    Fetched: "fetched",
+    Open: "open",
+    Closed: "closed"
+}
 
 /**
  * Home component
@@ -23,21 +31,16 @@ const Home = () => {
     const [candidateLikesList] = useState([]);
     const [state, setState] = useState("fetching");
 
-    // enum of state
-    const State = {
-        Fetching: "fetching",
-        Fetched: "fetched",
-        Open: "open",
-        Closed: "closed"
-    }
-
     // hook
-    useEffect(async () => {
-        // call nft_tokens_for_kind function
-        await nft_tokens_for_kind("candidate").then(value => {
-            setCandidateInfoList(value);
-            setState("fetched");
-        });
+    useEffect(() => {
+        const init = async() => {
+            // call nft_tokens_for_kind function
+            await nft_tokens_for_kind("candidate").then(value => {
+                setCandidateInfoList(value);
+                setState("fetched");
+            });
+        };
+        init();
     }, []);
 
     /**

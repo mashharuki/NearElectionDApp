@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "autoprefixer": "^10.4.8",
+    "nodemon": "^2.0.19",
     "parcel": "^2.7.0",
     "react-ipfs-image": "^0.6.0",
     "react-router-dom": "^6.3.0"

@@ -11,9 +11,9 @@ const AppRouter = () => {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/candidate" element={<Candidate />} />
-                <Route path="/voter" element={<Voter />} />
+                <Route path="/" exact element={<Home />} />
+                <Route path="/candidate" exact element={<Candidate />} />
+                <Route path="/voter" exact element={<Voter />} />
             </Routes>
         </BrowserRouter>
     );

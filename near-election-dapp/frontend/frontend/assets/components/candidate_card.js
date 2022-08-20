@@ -1,5 +1,6 @@
 import React from "react";
 import { IpfsImage } from 'react-ipfs-image';
+import './../css/global.css';
 
 /**
  * CandidateCard component  

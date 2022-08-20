@@ -68,9 +68,9 @@ export default function App() {
       </nav>
       {/* body(change depending on url) */}
       <div className='center'>
-        <AppRouter />
+        <AppRouter/>
       </div>
-      
+
     </div>
   )
 }
