@@ -1,7 +1,7 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App';
-import { initContract } from './near-api';
+import { initContract } from './assets/js/near/utils';
 
 const reactRoot = createRoot(document.querySelector('#root'));
 

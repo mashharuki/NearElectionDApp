@@ -3,7 +3,7 @@
  */
 module.exports = {
   content: [
-    "./frontend/**/*.{js,jsx,ts,tsx}",
+    "./frontend/**/*.{html,js,jsx,ts,tsx}",
   ],
   theme: {
     extend: {},
