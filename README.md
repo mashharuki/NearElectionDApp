@@ -1,14 +1,6 @@
 # NearElectionDApp
 Near上で動作するDApp開発用のリポジトリです。
 
-#### トレイトとは
-
-データ型を分類する仕組みのことです。
-
-#### near SDK  Rust
-
-NEARスマートコントラクトを作成するためのRustライブラリ
-
 ### 動かし方メモ
 
 ```cmd
@@ -231,6 +223,14 @@ NFTに紐づく投票数を取得する場合
 ### Taliwindのインストールと設定ファイルを生成するコマンド
  `npm install -D tailwindcss postcss &&  npx tailwindcss init`  
 
+#### トレイトとは
+
+データ型を分類する仕組みのことです。
+
+#### near SDK  Rust
+
+NEARスマートコントラクトを作成するためのRustライブラリ
+
 ### #[payable]の役割
 
  [payable]は token を授受できるようにするための注釈です。
@@ -238,6 +238,10 @@ NFTに紐づく投票数を取得する場合
 ### pub(crate)の役割
 
 pub(crate)とは、このファイル内だけで使用できる関数であることを示しています。
+
+### env-cmdとは
+
+envコマンドとは、LinuxなどのUNIX系OSで標準的に用いられるコマンドの一つで、システムの環境変数（environment variable）に特定の値を設定した状態で指定されたコマンドを実行するもの
 
 ### アカウントIDと秘密鍵の情報からNear Walletのアカウントをインポートする方法
 

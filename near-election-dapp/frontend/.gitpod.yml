@@ -2,5 +2,5 @@ tasks:
   - init: npm dev
     command: npm run dev
 ports:
-  - port: 1234
+  - port: 5001
     onOpen: open-browser

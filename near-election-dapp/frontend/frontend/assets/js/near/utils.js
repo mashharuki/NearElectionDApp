@@ -7,7 +7,7 @@ import {
 import { getConfig } from './config';
 const BN = require("bn.js");
 
-const nearConfig = getConfig(process.env.NODE_ENV || 'development');
+const nearConfig = getConfig(process.env.NODE_ENV || 'testnet');
 
 /**
  * Initialize contract & set global variables

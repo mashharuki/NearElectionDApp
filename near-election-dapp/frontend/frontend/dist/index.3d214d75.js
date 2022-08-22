@@ -27255,7 +27255,7 @@ function App() {
                                 children: [
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
                                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                                            href: "http://localhost:1234/",
+                                            href: "https://nearelectiondapp.netlify.app/",
                                             children: " Home "
                                         }, void 0, false, {
                                             fileName: "App.js",
@@ -27269,7 +27269,7 @@ function App() {
                                     }, this),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
                                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                                            href: "http://localhost:1234/candidate",
+                                            href: "https://nearelectiondapp.netlify.app/candidate",
                                             children: " Add Candidate "
                                         }, void 0, false, {
                                             fileName: "App.js",
@@ -27283,7 +27283,7 @@ function App() {
                                     }, this),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
                                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                                            href: "http://localhost:1234/voter",
+                                            href: "https://nearelectiondapp.netlify.app/voter",
                                             children: " Add Voter "
                                         }, void 0, false, {
                                             fileName: "App.js",
@@ -43856,7 +43856,7 @@ function getConfig(env) {
                 networkId: "mainnet",
                 nodeUrl: "https://rpc.mainnet.near.org",
                 contractName: CONTRACT_NAME,
-                walletUrl: "https://wallet.near.org",
+                walletUrl: "https://wallet.testnet.near.org",
                 helperUrl: "https://helper.mainnet.near.org",
                 explorerUrl: "https://explorer.mainnet.near.org"
             };

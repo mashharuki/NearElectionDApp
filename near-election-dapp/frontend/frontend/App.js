@@ -52,9 +52,9 @@ export default function App() {
           <div className="md:block md:w-auto pt-1">
             <ul className='flex md:flex-row md:space-x-8 md:text-xl md:font-medium'>
               {/* change url as being pushed button */}
-              <li><a href='http://localhost:1234/'> Home </a></li>
-              <li><a href='http://localhost:1234/candidate'> Add Candidate </a></li>
-              <li><a href='http://localhost:1234/voter'> Add Voter </a></li>
+              <li><a href='https://nearelectiondapp.netlify.app/'> Home </a></li>
+              <li><a href='https://nearelectiondapp.netlify.app/candidate'> Add Candidate </a></li>
+              <li><a href='https://nearelectiondapp.netlify.app/voter'> Add Voter </a></li>
               <button 
                 className="link text-red-500" 
                 style={{ float: 'right' }} 
